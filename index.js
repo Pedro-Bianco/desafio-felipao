@@ -1,36 +1,28 @@
-class Heroi {
-    constructor(nome, idade, tipo) {
-        this.nome = nome;
-        this.idade = idade;
-        this.tipo = tipo;
+function calcularNivel(vitorias, derrotas) {
+    let saldoVitorias = vitorias - derrotas;
+    let nivel;
+
+    if (vitorias < 10) {
+        nivel = "Ferro";
+    } else if (vitorias >= 11 && vitorias <= 20) {
+        nivel = "Bronze";
+    } else if (vitorias >= 21 && vitorias <= 50) {
+        nivel = "Prata";
+    } else if (vitorias >= 51 && vitorias <= 80) {
+        nivel = "Ouro";
+    } else if (vitorias >= 81 && vitorias <= 90) {
+        nivel = "Diamante";
+    } else if (vitorias >= 91 && vitorias <= 100) {
+        nivel = "Lendário";
+    } else {
+        nivel = "Imortal";
     }
 
-  
-    atacar() {
-        let ataque;
-
-        switch (this.tipo) {
-            case 'mago':
-                ataque = 'usou magia';
-                break;
-            case 'guerreiro':
-                ataque = 'usou espada';
-                break;
-            case 'monge':
-                ataque = 'usou artes marciais';
-                break;
-            case 'ninja':
-                ataque = 'usou shuriken';
-                break;
-            default:
-                ataque = 'não possui um ataque definido';
-        }
-
-        console.log(O ${this.tipo} atacou usando ${ataque});
-    }
+    return O Herói tem um saldo de ${saldoVitorias} e está no nível de ${nivel};
 }
 
 
-let meuHeroi = new Heroi('Pedro', 18, 'ninja');
+let mensagem = calcularNivel(70, 20); 
 
-meuHeroi.atacar();
+
+console.log(mensagem);
